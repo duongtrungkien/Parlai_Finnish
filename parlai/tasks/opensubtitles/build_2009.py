@@ -14,7 +14,7 @@ from parlai.utils.io import PathManager
 
 RESOURCES = [
     DownloadableFile(
-        'http://opus.lingfil.uu.se/download.php?f=OpenSubtitles/en.tar.gz',
+        'http://opus.lingfil.uu.se/download.php?f=OpenSubtitles/fi.tar.gz',
         'OpenSubtitles.tar.gz',
         'aef6d57db36c221b8cff1cf2356309874c27ef6a36bb8ca714509b37d0db29bc',
     )
@@ -101,7 +101,7 @@ def build(datapath):
         for downloadable_file in RESOURCES:
             downloadable_file.download_file(dpath)
 
-        create_fb_format(os.path.join(dpath, 'OpenSubtitles', 'en'), dpath)
+        create_fb_format(os.path.join(dpath, 'OpenSubtitles', 'fi'), dpath)
 
         # Mark the data as built.
         build_data.mark_done(dpath, version_string=version)

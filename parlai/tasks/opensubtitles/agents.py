@@ -125,6 +125,22 @@ class Task10kTeacher(HalfTeacher):
                 break
 
 
+class Task1kTeacher(HalfTeacher):
+    """
+    This version of opensubtitles only includes 10,000 dialogs.
+    """
+
+    def setup_data(self, path):
+        cnt = 0
+        for entry, new in super().setup_data(path):
+            if len(entry) > 1 and entry[1]:
+                # focus on examples with targets for small set
+                yield entry, new
+            cnt += 1
+            if cnt >= 1000:
+                break
+
+
 class V2009Teacher(FullTeacher):
     def __init__(self, opt, shared=None):
         super(V2009Teacher, self).__init__(opt, shared, '2009', True)
@@ -164,6 +180,9 @@ class V2018Task10kTeacher(Task10kTeacher):
     def __init__(self, opt, shared=None):
         super(V2018Task10kTeacher, self).__init__(opt, shared, '2018', True)
 
+class V2018Task1kTeacher(Task1kTeacher):
+    def __init__(self, opt, shared=None):
+        super(V2018Task1kTeacher, self).__init__(opt, shared, '2018', True)
 
 class V2018NoHistoryTeacher(FullTeacher):
     def __init__(self, opt, shared=None):

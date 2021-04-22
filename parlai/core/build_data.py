@@ -81,6 +81,7 @@ class DownloadableFile:
                 logging.debug("Checksum Successful")
 
     def download_file(self, dpath):
+        logging.info(f"Downloading {self.url}")
         if self.from_google:
             download_from_google_drive(self.url, os.path.join(dpath, self.file_name))
         else:

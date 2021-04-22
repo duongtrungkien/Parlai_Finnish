@@ -21,6 +21,8 @@ __pycache__/
 .vector_cache/
 env/
 build/
+models/
+models
 data/
 data
 logs/

@@ -1405,6 +1405,7 @@ class FbDeprecatedDialogTeacher(DialogTeacher):
                 yield [x, None, reward], start
 
 
+
 class ParlAIDialogTeacher(FixedDialogTeacher):
     """
     This module provides access to data in the ParlAI Text Dialog format.

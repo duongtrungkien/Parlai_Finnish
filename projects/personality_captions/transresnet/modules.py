@@ -85,7 +85,7 @@ class TransresnetModel(nn.Module):
             '--no-cuda',
             dest='no_cuda',
             action='store_true',
-            help='If True, perform ops on CPU only',
+            help='If True, perform ops on CPU only'
         )
         agent.add_argument(
             '--learningrate',

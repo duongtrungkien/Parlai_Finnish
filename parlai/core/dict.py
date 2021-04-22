@@ -296,7 +296,7 @@ class DictionaryAgent(Agent):
                 # load seed dictionary
                 opt['dict_initpath'] = modelzoo_path(
                     opt.get('datapath'), opt['dict_initpath']
-                )
+                  )
                 # don't check isfile first, should fail if file not found
                 self.load(opt['dict_initpath'])
             opt['dict_loaded'] = loaded

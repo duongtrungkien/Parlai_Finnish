@@ -20,14 +20,14 @@ from parlai.utils.io import PathManager
 
 RESOURCES = [
     DownloadableFile(
-        'https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/xml/en.zip',
+        'https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/xml/fi.zip',
         'OpenSubtitles2018.zip',
-        '917af90fcaa8b0ebb3d59d9f8d205f304f31bf92cbf15aa6e9ee030f6691755e',
+        '476adf769570b47ee76cacdca1436fc4aa6f3b8c7dec0580e4238d6d3ab63b31',
     )
 ]
 
-NUM_MOVIE_FOLDERS = 140044
-NUM_SUBTITLES_FILES = 446612
+NUM_MOVIE_FOLDERS = 45158
+NUM_SUBTITLES_FILES = 64439
 
 MAX_TIME_DIFFERENCE_S = 2
 MIN_WORD_LENGTH = 2
@@ -334,7 +334,7 @@ def build(datapath, use_history):
             build_data.remove_dir(dpath)
         build_data.make_dir(dpath)
 
-        untar_path = os.path.join(dpath, 'OpenSubtitles', 'xml', 'en')
+        untar_path = os.path.join(dpath, 'OpenSubtitles', 'xml', 'fi')
 
         if len(glob.glob(untar_path + '/*/*/*.xml')) != NUM_SUBTITLES_FILES:
             # Download the data.
